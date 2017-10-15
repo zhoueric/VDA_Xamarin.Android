@@ -13,10 +13,11 @@ using Android.OS;
 using Android.Speech;
 using System.IO;
 using System.Threading.Tasks;
+using Android.Graphics;
 
 namespace VDA_Android
 {
-    [Activity(Label = "VDA_Android", MainLauncher = true)]
+    [Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
 
     public class MainActivity : Activity
     {
@@ -28,34 +29,17 @@ namespace VDA_Android
             SetContentView(Resource.Layout.Main);
 
             speechResult = (TextView)FindViewById(Resource.Id.speechResult);
+            speechResult.Typeface = Typeface.CreateFromAsset(Assets, "Fonts/Roboto-Light.ttf");
 
-            Button button = FindViewById<Button>(Resource.Id.confirmText);
+            buttonConfirm = FindViewById<Button>(Resource.Id.confirmText);
+            buttonConfirm.Visibility = ViewStates.Invisible;
 
-            button.Click += async (sender, e) =>
+            buttonConfirm.Click += delegate
             {
-                string url = "https://virtualdealershipadvisorapi.azurewebsites.net/api/kpi?query=[sedan]";
-
-                JsonValue json = await FetchKPIAsync(url);
+                var res = new Intent(this, typeof(ResultActivity));
+                res.PutExtra("speechStr", speechStr);
+                StartActivity(res);
             };
-        }
-
-        private async Task<JsonValue> FetchKPIAsync(string url)
-        {
-            WebRequest request = WebRequest.Create(new Uri(url));
-            request.ContentType = "application/json";
-            request.Method = "GET";
-
-            using (WebResponse response = await request.GetResponseAsync())
-            {
-                using (Stream stream = response.GetResponseStream())
-                {
-                    JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
-                    Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
-
-                    return jsonDoc;
-                }
-            }
-
         }
 
         [Java.Interop.Export("GetSpeechInput")]
@@ -66,7 +50,6 @@ namespace VDA_Android
 
             StartActivityForResult(intent, 10);
 
-            OnCall();
         }
 
         protected override void OnActivityResult(int requestCode, [GeneratedEnum] Result resultCode, Intent data)
@@ -74,26 +57,27 @@ namespace VDA_Android
             base.OnActivityResult(requestCode, resultCode, data);
 
             if(requestCode == 10){
-                var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
-                speechResult.Text = resultList[0];
+
+                // This will be reinstated with working microphone. 
+                // Currently it will be set to dummy text.
+
+                //var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+
+                //resultStr = resultList[0];
+
+                //speechResult.Text = "What you said was: \n\n" + resultStr + 
+                //    " \n\nIs this correct?";
+
+                speechStr = "How can I improve my sedan sales?";
+
+                speechResult.Text = "What you said was: \n\n" + speechStr +
+                    "\n\nIs this correct?";
+                buttonConfirm.Visibility = ViewStates.Visible;
             }
         }
-
-        protected void OnCall()
-        {
-
-            
-        }
-
-        //protected String doInBackground(string url)
-        //{
-        //    try
-        //    {
-        //        URL url = 
-        //    }
-        //}
-
         private TextView speechResult;
+        private Button buttonConfirm;
+        private string speechStr = "";
     }
 }
 
