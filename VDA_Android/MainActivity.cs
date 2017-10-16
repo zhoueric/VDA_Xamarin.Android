@@ -61,18 +61,22 @@ namespace VDA_Android
                 // This will be reinstated with working microphone. 
                 // Currently it will be set to dummy text.
 
-                //var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+                var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
 
-                //resultStr = resultList[0];
-
-                //speechResult.Text = "What you said was: \n\n" + resultStr + 
-                //    " \n\nIs this correct?";
-
-                speechStr = "How can I improve my sedan sales?";
+                speechStr = resultList[0];
 
                 speechResult.Text = "What you said was: \n\n" + speechStr +
-                    "\n\nIs this correct?";
+                    " \n\nIs this correct?";
+
+                //speechStr = "How can I improve my sedan sales?";
+
+                //speechResult.Text = "What you said was: \n\n" + speechStr +
+                //    "\n\nIs this correct?";
+
                 buttonConfirm.Visibility = ViewStates.Visible;
+
+                ImageView micImage = (ImageView)FindViewById(Resource.Id.btnSpeak);
+                micImage.Visibility = ViewStates.Gone;
             }
         }
         private TextView speechResult;

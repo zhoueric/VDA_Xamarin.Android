@@ -69,9 +69,6 @@ namespace VDA_Android
 		public partial class Id
 		{
 			
-			// aapt resource value: 0x7f050004
-			public const int Button02 = 2131034116;
-			
 			// aapt resource value: 0x7f050005
 			public const int Button03 = 2131034117;
 			
@@ -93,11 +90,29 @@ namespace VDA_Android
 			// aapt resource value: 0x7f050009
 			public const int confirmText = 2131034121;
 			
+			// aapt resource value: 0x7f05000e
+			public const int p1 = 2131034126;
+			
+			// aapt resource value: 0x7f05000f
+			public const int result1 = 2131034127;
+			
+			// aapt resource value: 0x7f05000b
+			public const int resultLayout = 2131034123;
+			
 			// aapt resource value: 0x7f050008
 			public const int speechResult = 2131034120;
 			
+			// aapt resource value: 0x7f050004
+			public const int startOverButton = 2131034116;
+			
+			// aapt resource value: 0x7f05000c
+			public const int temp = 2131034124;
+			
 			// aapt resource value: 0x7f050006
 			public const int usLogo = 2131034118;
+			
+			// aapt resource value: 0x7f05000d
+			public const int value1 = 2131034125;
 			
 			// aapt resource value: 0x7f050007
 			public const int welcome = 2131034119;

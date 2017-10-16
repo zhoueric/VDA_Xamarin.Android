@@ -26,6 +26,16 @@ namespace VDA_Android
             ColorDrawable colorDrawable = new ColorDrawable(Color.Rgb(153,204,0));
             ActionBar.SetBackgroundDrawable(colorDrawable);
 
+
+            var startOverButton = FindViewById<Button>(Resource.Id.startOverButton);
+
+            startOverButton.Click += delegate
+            {
+                var act = new Intent(this, typeof(MainActivity));
+                //act.PutExtra("speechStr", speechStr);
+                StartActivity(act);
+            };
+
         }
     }
 }
