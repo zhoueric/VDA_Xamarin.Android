@@ -84,17 +84,26 @@ namespace VDA_Android
 			// aapt resource value: 0x7f05000a
 			public const int btnSpeak = 2131034122;
 			
+			// aapt resource value: 0x7f05000d
+			public const int butNeeded = 2131034125;
+			
+			// aapt resource value: 0x7f05000c
+			public const int butRelated = 2131034124;
+			
+			// aapt resource value: 0x7f050011
+			public const int butToActions = 2131034129;
+			
 			// aapt resource value: 0x7f050002
 			public const int button1 = 2131034114;
 			
 			// aapt resource value: 0x7f050009
 			public const int confirmText = 2131034121;
 			
-			// aapt resource value: 0x7f05000e
-			public const int p1 = 2131034126;
-			
 			// aapt resource value: 0x7f05000f
-			public const int result1 = 2131034127;
+			public const int p1 = 2131034127;
+			
+			// aapt resource value: 0x7f050010
+			public const int result1 = 2131034128;
 			
 			// aapt resource value: 0x7f05000b
 			public const int resultLayout = 2131034123;
@@ -105,14 +114,11 @@ namespace VDA_Android
 			// aapt resource value: 0x7f050004
 			public const int startOverButton = 2131034116;
 			
-			// aapt resource value: 0x7f05000c
-			public const int temp = 2131034124;
-			
 			// aapt resource value: 0x7f050006
 			public const int usLogo = 2131034118;
 			
-			// aapt resource value: 0x7f05000d
-			public const int value1 = 2131034125;
+			// aapt resource value: 0x7f05000e
+			public const int value1 = 2131034126;
 			
 			// aapt resource value: 0x7f050007
 			public const int welcome = 2131034119;

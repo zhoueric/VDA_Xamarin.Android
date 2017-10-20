@@ -35,13 +35,14 @@ namespace VDA_Android
 
             string speechStr = Intent.GetStringExtra("speechStr") ?? "Data not available";
 
-            but = FindViewById<Button>(Resource.Id.temp);
+            // Sets fake button to be simulated clicked to start async
+            butRelated = FindViewById<Button>(Resource.Id.butRelated);
             resultLayout = FindViewById<LinearLayout>(Resource.Id.resultLayout);
 
-            //var result1 = (TextView)FindViewById(Resource.Id.result1);
-            //result1.Text = "asdf";
+            butNeeded = FindViewById<Button>(Resource.Id.butNeeded);
 
-            but.Click += async (sender, e) =>
+            // Starts async for related KPI
+            butRelated.Click += async (sender, e) =>
             {
                 string urlBase = "https://virtualdealershipadvisorapi.azurewebsites.net/api/RelatedKpi?";
 
@@ -53,16 +54,35 @@ namespace VDA_Android
 
                 string url = urlBase + urlQuery + urlDealer;
 
-                json = await FetchKPIAsync(url);
+                jsonRelated = await FetchKPIAsync(url);
 
                 DisplayJson();
             };
 
-            but.PerformClick();
+            butNeeded.Click += async (sender, e) =>
+            {
+                string urlBase = "https://virtualdealershipadvisorapi.azurewebsites.net/api/NeededKpi?";
 
-            button1 = FindViewById<Button>(Resource.Id.button1);
+                string queryParsed = Uri.EscapeDataString(speechStr);
 
-            button1.Click += delegate
+                string urlQuery = "query=" + queryParsed + '&';
+
+                string urlDealer = "dealer_name=" + "omega";
+
+                string url = urlBase + urlQuery + urlDealer;
+
+                jsonNeeded = await FetchKPIAsync(url);
+
+                DisplayJsonNeeded();
+            };
+
+            butRelated.PerformClick();
+
+            butNeeded.PerformClick();
+
+            butToActions = FindViewById<Button>(Resource.Id.butToActions);
+
+            butToActions.Click += delegate
             {
                 var act = new Intent(this, typeof(ActionActivity));
                 //act.PutExtra("speechStr", speechStr);
@@ -89,12 +109,11 @@ namespace VDA_Android
             }
         }
 
-
         private void DisplayJson()
         {
-            string a = json.ToString();
+            string a = jsonRelated.ToString();
 
-            relatedKPI = JsonConvert.DeserializeObject<ResultObject>(json.ToString());
+            relatedKPI = JsonConvert.DeserializeObject<ResultObject>(jsonRelated.ToString());
 
             double p = relatedKPI.p_val;
 
@@ -115,8 +134,7 @@ namespace VDA_Android
 
             result1.Text = text;
 
-            button1.Visibility = ViewStates.Visible;
-
+            butToActions.Visibility = ViewStates.Visible;
 
             //// create a new textview
             //var rowTextView = new TextView(this);
@@ -132,10 +150,51 @@ namespace VDA_Android
             //JsonValue kpiResults = json
         }
 
+        private void DisplayJsonNeeded()
+        {
+            string a = jsonNeeded.ToString();
+
+            neededKPI = JsonConvert.DeserializeObject<ResultObject>(jsonRelated.ToString());
+
+            string s = neededKPI.GetType().ToString();
+
+            string g = "a";
+
+            //double p = relatedKPI.p_val;
+
+            //var value1 = FindViewById<TextView>(Resource.Id.value1);
+            //value1.Text = relatedKPI.value.ToString();
+            //value1.Visibility = ViewStates.Visible;
+
+            //var p1 = FindViewById<TextView>(Resource.Id.p1);
+            //p1.Text = "KPI Percentile: " + Math.Round(relatedKPI.p_val * 100, 2).ToString() + "%";
+            //p1.Visibility = ViewStates.Visible;
+
+            //var result1 = FindViewById<TextView>(Resource.Id.result1);
+            //string text = "You are performing ";
+
+            //text += p > 0.5 ? "above" : "below";
+
+            //text += " average on this measurment.\n\nClick below to view actions you can take to improve on this metric.";
+
+            //result1.Text = text;
+
+            //butToActions.Visibility = ViewStates.Visible;
+
+        }
+
         public LinearLayout resultLayout;
         public ResultObject relatedKPI;
-        private JsonValue json;
-        private Button but;
-        private Button button1;
+        public ResultObject neededKPI;
+
+        // respective json return variables from API
+        private JsonValue jsonRelated;
+        private JsonValue jsonNeeded;
+
+        // fake buttons to be click simluated
+        private Button butRelated;
+        private Button butNeeded;
+
+        private Button butToActions;
     }
 }

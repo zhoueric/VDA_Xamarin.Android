@@ -20,6 +20,7 @@
         android:layout_marginRight="20.0dp"
         android:layout_marginLeft="20.0dp"
         android:gravity="center"
+        android:layout_gravity="center"
         android:textColor="#000"
         android:textSize="30sp"
         android:textStyle="normal" />
