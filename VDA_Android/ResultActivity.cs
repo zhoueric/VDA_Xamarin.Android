@@ -56,7 +56,7 @@ namespace VDA_Android
 
                 jsonRelated = await FetchKPIAsync(url);
 
-                DisplayJson();
+                DisplayJsonRelated();
             };
 
             butNeeded.Click += async (sender, e) =>
@@ -109,7 +109,7 @@ namespace VDA_Android
             }
         }
 
-        private void DisplayJson()
+        private void DisplayJsonRelated()
         {
             string a = jsonRelated.ToString();
 
@@ -152,40 +152,56 @@ namespace VDA_Android
 
         private void DisplayJsonNeeded()
         {
-            string a = jsonNeeded.ToString();
+            neededKPI = new List<ResultObject>();
 
-            neededKPI = JsonConvert.DeserializeObject<ResultObject>(jsonRelated.ToString());
+            neededKPI = JsonConvert.DeserializeObject<List<ResultObject>>(jsonNeeded.ToString());
 
-            string s = neededKPI.GetType().ToString();
+            foreach(var KPI in neededKPI)
+            {
+                // create a new textview
+                var rowTextView = new TextView(this);
 
-            string g = "a";
+                // set some properties of rowTextView or something
+                LinearLayout.LayoutParams ll = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
+                ll.SetMargins(0, 10, 0, 10);
+                rowTextView.LayoutParameters = ll;
 
-            //double p = relatedKPI.p_val;
+                rowTextView.Text = KPI.value.ToString();
+                rowTextView.TextSize = 30;
 
-            //var value1 = FindViewById<TextView>(Resource.Id.value1);
-            //value1.Text = relatedKPI.value.ToString();
-            //value1.Visibility = ViewStates.Visible;
+                // add the textview to the linearlayout
+                resultLayout.AddView(rowTextView);
 
-            //var p1 = FindViewById<TextView>(Resource.Id.p1);
-            //p1.Text = "KPI Percentile: " + Math.Round(relatedKPI.p_val * 100, 2).ToString() + "%";
-            //p1.Visibility = ViewStates.Visible;
+                //double p = KPI.p_val;
 
-            //var result1 = FindViewById<TextView>(Resource.Id.result1);
-            //string text = "You are performing ";
+                //var value1 = FindViewById<TextView>(Resource.Id.value1);
+                //value1.Text = KPI.value.ToString();
+                //value1.Visibility = ViewStates.Visible;
 
-            //text += p > 0.5 ? "above" : "below";
+                //var p1 = FindViewById<TextView>(Resource.Id.p1);
+                //p1.Text = "KPI Percentile: " + Math.Round(KPI.p_val * 100, 2).ToString() + "%";
+                //p1.Visibility = ViewStates.Visible;
 
-            //text += " average on this measurment.\n\nClick below to view actions you can take to improve on this metric.";
+                //var result1 = FindViewById<TextView>(Resource.Id.result1);
+                //string text = "You are performing ";
 
-            //result1.Text = text;
+                //text += p > 0.5 ? "above" : "below";
 
-            //butToActions.Visibility = ViewStates.Visible;
+                //text += " average on this measurment.\n\nClick below to view actions you can take to improve on this metric.";
+
+                //result1.Text = text;
+
+
+            }
+
+
 
         }
 
         public LinearLayout resultLayout;
         public ResultObject relatedKPI;
-        public ResultObject neededKPI;
+        public List<ResultObject> neededKPI;
 
         // respective json return variables from API
         private JsonValue jsonRelated;

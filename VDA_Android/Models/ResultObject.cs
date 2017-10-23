@@ -14,7 +14,11 @@ namespace VDA_Android.Models
 {
     public class ResultObject
     {
-        public int id { get; set; }
+        public ResultObject()
+        {
+            action_list = new List<KpiAction>();
+        }
+        public int id;
         public string name { get; set; }
         public int value { get; set; }
         public double p_val { get; set; }
