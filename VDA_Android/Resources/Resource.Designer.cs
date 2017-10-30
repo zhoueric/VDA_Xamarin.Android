@@ -125,16 +125,22 @@ namespace VDA_Android
 		{
 			
 			// aapt resource value: 0x7f020000
-			public const int logo = 2130837504;
+			public const int card_edge_green = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int microphone = 2130837505;
+			public const int card_edge_red = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int microphone2 = 2130837506;
+			public const int logo = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int microphone3 = 2130837507;
+			public const int microphone = 2130837507;
+			
+			// aapt resource value: 0x7f020004
+			public const int microphone2 = 2130837508;
+			
+			// aapt resource value: 0x7f020005
+			public const int microphone3 = 2130837509;
 			
 			static Drawable()
 			{
@@ -161,35 +167,38 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080000
 			public const int actionTitle = 2131230720;
 			
-			// aapt resource value: 0x7f08000a
-			public const int btnSpeak = 2131230730;
+			// aapt resource value: 0x7f08000c
+			public const int btnSpeak = 2131230732;
+			
+			// aapt resource value: 0x7f080013
+			public const int butNeeded = 2131230739;
+			
+			// aapt resource value: 0x7f080012
+			public const int butRelated = 2131230738;
 			
 			// aapt resource value: 0x7f080011
-			public const int butNeeded = 2131230737;
-			
-			// aapt resource value: 0x7f080010
-			public const int butRelated = 2131230736;
-			
-			// aapt resource value: 0x7f08000f
-			public const int butToActions = 2131230735;
+			public const int butToActions = 2131230737;
 			
 			// aapt resource value: 0x7f080002
 			public const int button1 = 2131230722;
 			
-			// aapt resource value: 0x7f080009
-			public const int confirmText = 2131230729;
+			// aapt resource value: 0x7f08000b
+			public const int confirmText = 2131230731;
+			
+			// aapt resource value: 0x7f08000f
+			public const int p1 = 2131230735;
+			
+			// aapt resource value: 0x7f080010
+			public const int result1 = 2131230736;
 			
 			// aapt resource value: 0x7f08000d
-			public const int p1 = 2131230733;
+			public const int resultLayout = 2131230733;
 			
-			// aapt resource value: 0x7f08000e
-			public const int result1 = 2131230734;
-			
-			// aapt resource value: 0x7f08000b
-			public const int resultLayout = 2131230731;
+			// aapt resource value: 0x7f08000a
+			public const int speechResultBottom = 2131230730;
 			
 			// aapt resource value: 0x7f080008
-			public const int speechResult = 2131230728;
+			public const int speechResultTop = 2131230728;
 			
 			// aapt resource value: 0x7f080004
 			public const int startOverButton = 2131230724;
@@ -197,8 +206,11 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080006
 			public const int usLogo = 2131230726;
 			
-			// aapt resource value: 0x7f08000c
-			public const int value1 = 2131230732;
+			// aapt resource value: 0x7f080009
+			public const int userInput = 2131230729;
+			
+			// aapt resource value: 0x7f08000e
+			public const int value1 = 2131230734;
 			
 			// aapt resource value: 0x7f080007
 			public const int welcome = 2131230727;

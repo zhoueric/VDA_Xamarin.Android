@@ -28,8 +28,13 @@ namespace VDA_Android
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            speechResult = (TextView)FindViewById(Resource.Id.speechResult);
-            speechResult.Typeface = Typeface.CreateFromAsset(Assets, "Fonts/Roboto-Light.ttf");
+            speechResultTop = (TextView)FindViewById(Resource.Id.speechResultTop);
+            speechResultTop.Typeface = Typeface.CreateFromAsset(Assets, "Fonts/Roboto-Light.ttf");
+
+            speechResultBottom = (TextView)FindViewById(Resource.Id.speechResultBottom);
+            speechResultBottom.Typeface = Typeface.CreateFromAsset(Assets, "Fonts/Roboto-Light.ttf");
+
+            userInput = (EditText)FindViewById(Resource.Id.userInput);
 
             buttonConfirm = FindViewById<Button>(Resource.Id.confirmText);
             buttonConfirm.Visibility = ViewStates.Invisible;
@@ -70,8 +75,10 @@ namespace VDA_Android
 
                 speechStr = "How can I improve my sedan sales?";
 
-                speechResult.Text = "What you said was: \n\n" + speechStr +
-                    "\n\nIs this correct?";
+                userInput.Text = speechStr;
+
+                speechResultTop.Text = "What you said was";
+                speechResultBottom.Text = "...is that correct?";
 
                 buttonConfirm.Visibility = ViewStates.Visible;
 
@@ -79,7 +86,9 @@ namespace VDA_Android
                 micImage.Visibility = ViewStates.Gone;
             }
         }
-        private TextView speechResult;
+        private TextView speechResultTop;
+        private TextView speechResultBottom;
+        private EditText userInput;
         private Button buttonConfirm;
         private string speechStr = "";
     }

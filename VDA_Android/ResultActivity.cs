@@ -120,7 +120,8 @@ namespace VDA_Android
             double p = relatedKPI.p_val;
 
             var value1 = FindViewById<TextView>(Resource.Id.value1);
-            value1.Text = relatedKPI.value.ToString();
+            value1.Text = relatedKPI.brand + " " + relatedKPI.segment + " " + relatedKPI.name
+                + ": " + relatedKPI.value.ToString();
             value1.Visibility = ViewStates.Visible;
 
             var p1 = FindViewById<TextView>(Resource.Id.p1);
@@ -153,7 +154,7 @@ namespace VDA_Android
                 var card = new CardView(this);
 
                 // set card elevation
-                card.SetMinimumHeight(500);
+                card.SetMinimumHeight(200);
                 card.UseCompatPadding = true;
                 card.Elevation = 4;
                 card.Radius = 5;
@@ -184,8 +185,9 @@ namespace VDA_Android
                 ll.SetMargins(0, 10, 0, 10);
                 valueTextView.LayoutParameters = ll;
 
-                valueTextView.Text = KPI.value.ToString();
-                valueTextView.TextSize = 30;
+                valueTextView.Text = KPI.brand + " " + KPI.segment + " " + KPI.name
+                + ": " + KPI.value.ToString();
+                valueTextView.TextSize = 25;
 
                 // add the textview to the linearLayout
                 linearLayout.AddView(valueTextView);
@@ -209,13 +211,16 @@ namespace VDA_Android
 
                 // ========================================================================================
 
-                // creata new textview for result
+                // create a new textview for result
                 var resultTextView = new TextView(this);
 
                 LinearLayout.LayoutParams ll3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
                     ViewGroup.LayoutParams.WrapContent);
+                ll3.Gravity = GravityFlags.Center;
                 ll3.SetMargins(0, 10, 0, 10);
+
                 resultTextView.LayoutParameters = ll3;
+                resultTextView.Gravity = GravityFlags.Center;
 
                 string text = "You are performing ";
 
@@ -227,7 +232,19 @@ namespace VDA_Android
 
                 linearLayout.AddView(resultTextView);
 
-                // ========================================================================================
+                // =========================================================================================
+
+                // create a new frameLayout for border
+
+                var frameLayout = new FrameLayout(this);
+
+                LinearLayout.LayoutParams ll4 = new LinearLayout.LayoutParams(4,
+                    ViewGroup.LayoutParams.MatchParent);
+                frameLayout.LayoutParameters = ll4;
+
+                frameLayout.SetBackgroundResource(Resource.Drawable.card_edge_red);
+
+                card.AddView(frameLayout);
 
                 card.AddView(linearLayout);
 
