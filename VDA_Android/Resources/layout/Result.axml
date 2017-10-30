@@ -28,6 +28,7 @@
         android:layout_width="fill_parent"
         android:layout_height="300dp"
         android:layout_gravity="center"
+        android:layout_marginBottom="4dp"
         cardview:cardElevation="4dp"
         cardview:cardCornerRadius="5dp">
       <LinearLayout

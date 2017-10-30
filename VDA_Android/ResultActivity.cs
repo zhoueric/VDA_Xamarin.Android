@@ -19,6 +19,7 @@ using Newtonsoft.Json;
 using System.Threading.Tasks;
 using System.IO;
 using Android.Graphics;
+using Android.Support.V7.Widget;
 
 namespace VDA_Android
 {
@@ -136,19 +137,6 @@ namespace VDA_Android
             result1.Text = text;
 
             butToActions.Visibility = ViewStates.Visible;
-
-            //// create a new textview
-            //var rowTextView = new TextView(this);
-
-            //// set some properties of rowTextView or something
-            //rowTextView.Text = relatedKPI.p_val.ToString();
-
-            //// add the textview to the linearlayout
-            //resultLayout.AddView(rowTextView);
-
-            //TextView box = FindViewById<TextView>(Resource.Id.KPIText);
-
-            //JsonValue kpiResults = json
         }
 
         private void DisplayJsonNeeded()
@@ -159,6 +147,34 @@ namespace VDA_Android
 
             foreach (var KPI in neededKPI)
             {
+                // ========================================================================================
+               
+                // create a new cardview
+                var card = new CardView(this);
+
+                // set card elevation
+                card.SetMinimumHeight(500);
+                card.UseCompatPadding = true;
+                card.Elevation = 4;
+                card.Radius = 5;
+                card.SetForegroundGravity(GravityFlags.Center);
+                card.SetPadding(0, 100, 0, 100);
+
+                // ========================================================================================
+
+                // create a new linearlayout
+                var linearLayout = new LinearLayout(this);
+
+                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent,
+                    295);
+                linearLayout.LayoutParameters = ll2;
+
+                linearLayout.Orientation = Orientation.Vertical;
+                linearLayout.SetGravity(GravityFlags.Center);
+                linearLayout.SetPadding(8, 8, 8, 8);
+
+                // ========================================================================================
+
                 // create a new textview for value parameter
                 var valueTextView = new TextView(this);
 
@@ -171,25 +187,51 @@ namespace VDA_Android
                 valueTextView.Text = KPI.value.ToString();
                 valueTextView.TextSize = 30;
 
-                // add the textview to the resultLayout
-                resultLayout.AddView(valueTextView);
+                // add the textview to the linearLayout
+                linearLayout.AddView(valueTextView);
 
+                // ========================================================================================
 
-                // create a new textview for value parameter
+                // create a new textview for p-val parameter
                 var pvalTextView = new TextView(this);
 
                 LinearLayout.LayoutParams ll1 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
                     ViewGroup.LayoutParams.WrapContent);
-                ll.SetMargins(0, 10, 0, 10);
+                ll1.SetMargins(0, 10, 0, 10);
                 pvalTextView.LayoutParameters = ll1;
 
                 pvalTextView.Text = "KPI Percentile: " + Math.Round(KPI.p_val * 100, 2).ToString() + "%";
                 pvalTextView.TextSize = 15;
                 pvalTextView.SetTextColor(Color.Black);
 
-                // add the textview to the resultLayout
-                resultLayout.AddView(pvalTextView);
+                // add the textview to the linearLayout
+                linearLayout.AddView(pvalTextView);
 
+                // ========================================================================================
+
+                // creata new textview for result
+                var resultTextView = new TextView(this);
+
+                LinearLayout.LayoutParams ll3 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
+                ll3.SetMargins(0, 10, 0, 10);
+                resultTextView.LayoutParameters = ll3;
+
+                string text = "You are performing ";
+
+                text += KPI.p_val > 0.5 ? "above" : "below";
+
+                text += " average on this measurment.\n\nClick below to view actions you can take to improve on this metric.";
+
+                resultTextView.Text = text;
+
+                linearLayout.AddView(resultTextView);
+
+                // ========================================================================================
+
+                card.AddView(linearLayout);
+
+                resultLayout.AddView(card);
             }
 
 
