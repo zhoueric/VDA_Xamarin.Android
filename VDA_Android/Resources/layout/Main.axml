@@ -66,20 +66,35 @@
         android:textColor="#000"
         android:textSize="20sp"
         android:textStyle="normal" />
-  <Button
-      android:id="@+id/confirmText"
-      android:layout_gravity="center"
-      android:text="Confirm"
-      android:layout_width="wrap_content"
-      android:layout_height="50.0dp"
-      android:layout_marginTop="20.0dp"
-      android:layout_marginBottom="1.0dp"
-      android:layout_marginRight="0.0dp"
-      android:layout_marginLeft="0.0dp" />
+  <LinearLayout
+    android:id="@+id/buttonWrap"
+    android:layout_height="60dp"
+    android:layout_width="fill_parent"
+    android:layout_marginTop="80dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:visibility="gone">
+    <Button
+        android:id="@+id/tryAgain"
+        android:text="Try Again"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone"/>
+    <Button
+        android:id="@+id/confirmText"
+        android:text="Confirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:visibility="gone"/>
+  </LinearLayout>
+
   <ImageView
       android:id="@+id/btnSpeak"
       android:layout_width="80dp"
       android:layout_height="80dp"
+      android:layout_marginTop="80dp"
       android:layout_gravity="center"
       android:onClick="GetSpeechInput"
       android:src="@drawable/microphone3" />

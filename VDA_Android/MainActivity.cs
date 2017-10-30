@@ -28,6 +28,10 @@ namespace VDA_Android
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
+            buttonGroup = FindViewById<LinearLayout>(Resource.Id.buttonWrap);
+
+            micImage = (ImageView)FindViewById(Resource.Id.btnSpeak);
+
             speechResultTop = (TextView)FindViewById(Resource.Id.speechResultTop);
             speechResultTop.Typeface = Typeface.CreateFromAsset(Assets, "Fonts/Roboto-Light.ttf");
 
@@ -37,13 +41,22 @@ namespace VDA_Android
             userInput = (EditText)FindViewById(Resource.Id.userInput);
 
             buttonConfirm = FindViewById<Button>(Resource.Id.confirmText);
-            buttonConfirm.Visibility = ViewStates.Invisible;
+            buttonTryAgain = FindViewById<Button>(Resource.Id.tryAgain);
+
 
             buttonConfirm.Click += delegate
             {
                 var res = new Intent(this, typeof(ResultActivity));
-                res.PutExtra("speechStr", speechStr);
+                res.PutExtra("speechStr", userInput.Text);
                 StartActivity(res);
+            };
+
+            buttonTryAgain.Click += delegate
+            {
+                buttonConfirm.Visibility = ViewStates.Gone;
+                buttonTryAgain.Visibility = ViewStates.Gone;
+                buttonGroup.Visibility = ViewStates.Gone;
+                micImage.Visibility = ViewStates.Visible;
             };
         }
 
@@ -81,8 +94,10 @@ namespace VDA_Android
                 speechResultBottom.Text = "...is that correct?";
 
                 buttonConfirm.Visibility = ViewStates.Visible;
+                buttonTryAgain.Visibility = ViewStates.Visible;
 
-                ImageView micImage = (ImageView)FindViewById(Resource.Id.btnSpeak);
+                buttonGroup.Visibility = ViewStates.Visible;
+
                 micImage.Visibility = ViewStates.Gone;
             }
         }
@@ -90,6 +105,9 @@ namespace VDA_Android
         private TextView speechResultBottom;
         private EditText userInput;
         private Button buttonConfirm;
+        private Button buttonTryAgain;
+        private LinearLayout buttonGroup;
+        ImageView micImage;
         private string speechStr = "";
     }
 }

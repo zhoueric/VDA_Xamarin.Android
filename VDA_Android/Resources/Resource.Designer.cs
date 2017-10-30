@@ -167,32 +167,35 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080000
 			public const int actionTitle = 2131230720;
 			
-			// aapt resource value: 0x7f08000c
-			public const int btnSpeak = 2131230732;
+			// aapt resource value: 0x7f08000e
+			public const int btnSpeak = 2131230734;
+			
+			// aapt resource value: 0x7f080015
+			public const int butNeeded = 2131230741;
+			
+			// aapt resource value: 0x7f080014
+			public const int butRelated = 2131230740;
 			
 			// aapt resource value: 0x7f080013
-			public const int butNeeded = 2131230739;
-			
-			// aapt resource value: 0x7f080012
-			public const int butRelated = 2131230738;
-			
-			// aapt resource value: 0x7f080011
-			public const int butToActions = 2131230737;
+			public const int butToActions = 2131230739;
 			
 			// aapt resource value: 0x7f080002
 			public const int button1 = 2131230722;
 			
 			// aapt resource value: 0x7f08000b
-			public const int confirmText = 2131230731;
-			
-			// aapt resource value: 0x7f08000f
-			public const int p1 = 2131230735;
-			
-			// aapt resource value: 0x7f080010
-			public const int result1 = 2131230736;
+			public const int buttonWrap = 2131230731;
 			
 			// aapt resource value: 0x7f08000d
-			public const int resultLayout = 2131230733;
+			public const int confirmText = 2131230733;
+			
+			// aapt resource value: 0x7f080011
+			public const int p1 = 2131230737;
+			
+			// aapt resource value: 0x7f080012
+			public const int result1 = 2131230738;
+			
+			// aapt resource value: 0x7f08000f
+			public const int resultLayout = 2131230735;
 			
 			// aapt resource value: 0x7f08000a
 			public const int speechResultBottom = 2131230730;
@@ -203,14 +206,17 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080004
 			public const int startOverButton = 2131230724;
 			
+			// aapt resource value: 0x7f08000c
+			public const int tryAgain = 2131230732;
+			
 			// aapt resource value: 0x7f080006
 			public const int usLogo = 2131230726;
 			
 			// aapt resource value: 0x7f080009
 			public const int userInput = 2131230729;
 			
-			// aapt resource value: 0x7f08000e
-			public const int value1 = 2131230734;
+			// aapt resource value: 0x7f080010
+			public const int value1 = 2131230736;
 			
 			// aapt resource value: 0x7f080007
 			public const int welcome = 2131230727;
