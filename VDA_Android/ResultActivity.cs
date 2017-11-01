@@ -46,7 +46,7 @@ namespace VDA_Android
             // Starts async for related KPI
             butRelated.Click += async (sender, e) =>
             {
-                string urlBase = "https://virtualdealershipadvisorapi.azurewebsites.net/api/RelatedKpi?";
+                string urlBase = "https://msufall2017virtualdealershipadviserapi.azurewebsites.net/api/RelatedKpi?";
 
                 string queryParsed = Uri.EscapeDataString(speechStr);
 
@@ -63,7 +63,7 @@ namespace VDA_Android
 
             butNeeded.Click += async (sender, e) =>
             {
-                string urlBase = "https://virtualdealershipadvisorapi.azurewebsites.net/api/NeededKpi?";
+                string urlBase = "https://msufall2017virtualdealershipadviserapi.azurewebsites.net/api/NeededKpi?";
 
                 string queryParsed = Uri.EscapeDataString(speechStr);
 

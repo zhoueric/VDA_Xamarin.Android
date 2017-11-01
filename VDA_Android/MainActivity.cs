@@ -79,14 +79,14 @@ namespace VDA_Android
                 // This will be reinstated with working microphone. 
                 // Currently it will be set to dummy text.
 
-                //var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+                var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
 
-                //speechStr = resultList[0];
+                speechStr = resultList[0];
 
                 //speechResult.Text = "What you said was: \n\n" + speechStr +
                 //    " \n\nIs this correct?";
 
-                speechStr = "How can I improve my sedan sales?";
+                //speechStr = "How can I improve my sedan sales?";
 
                 userInput.Text = speechStr;
 
