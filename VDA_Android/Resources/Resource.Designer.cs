@@ -182,11 +182,11 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080002
 			public const int button1 = 2131230722;
 			
-			// aapt resource value: 0x7f08000b
-			public const int buttonWrap = 2131230731;
+			// aapt resource value: 0x7f080008
+			public const int buttonWrap = 2131230728;
 			
-			// aapt resource value: 0x7f08000d
-			public const int confirmText = 2131230733;
+			// aapt resource value: 0x7f08000a
+			public const int confirmText = 2131230730;
 			
 			// aapt resource value: 0x7f080011
 			public const int p1 = 2131230737;
@@ -197,29 +197,29 @@ namespace VDA_Android
 			// aapt resource value: 0x7f08000f
 			public const int resultLayout = 2131230735;
 			
-			// aapt resource value: 0x7f08000a
-			public const int speechResultBottom = 2131230730;
+			// aapt resource value: 0x7f08000d
+			public const int speechResultBottom = 2131230733;
 			
-			// aapt resource value: 0x7f080008
-			public const int speechResultTop = 2131230728;
+			// aapt resource value: 0x7f08000c
+			public const int speechResultTop = 2131230732;
 			
 			// aapt resource value: 0x7f080004
 			public const int startOverButton = 2131230724;
 			
-			// aapt resource value: 0x7f08000c
-			public const int tryAgain = 2131230732;
+			// aapt resource value: 0x7f080009
+			public const int tryAgain = 2131230729;
 			
 			// aapt resource value: 0x7f080006
 			public const int usLogo = 2131230726;
 			
-			// aapt resource value: 0x7f080009
-			public const int userInput = 2131230729;
+			// aapt resource value: 0x7f080007
+			public const int userInput = 2131230727;
 			
 			// aapt resource value: 0x7f080010
 			public const int value1 = 2131230736;
 			
-			// aapt resource value: 0x7f080007
-			public const int welcome = 2131230727;
+			// aapt resource value: 0x7f08000b
+			public const int welcome = 2131230731;
 			
 			static Id()
 			{
@@ -238,10 +238,13 @@ namespace VDA_Android
 			public const int Action = 2130903040;
 			
 			// aapt resource value: 0x7f030001
-			public const int Main = 2130903041;
+			public const int Login = 2130903041;
 			
 			// aapt resource value: 0x7f030002
-			public const int Result = 2130903042;
+			public const int Main = 2130903042;
+			
+			// aapt resource value: 0x7f030003
+			public const int Result = 2130903043;
 			
 			static Layout()
 			{
