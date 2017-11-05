@@ -21,22 +21,7 @@ using System.IO;
 using Android.Graphics;
 using Android.Support.V7.Widget;
 
-using System;
-using System.Json;
-using System.Net;
-using System.Threading;
 
-using Android.App;
-using Android.Content;
-using Android.Content.PM;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Android.OS;
-using Android.Speech;
-using System.IO;
-using System.Threading.Tasks;
-using Android.Graphics;
 
 namespace VDA_Android
 {
@@ -83,7 +68,11 @@ namespace VDA_Android
             if (login_credentials.validUser)
             {
                 var res = new Intent(this, typeof(MainActivity));
-                res.PutExtra("dealer_name", userInput.Text);
+                //res.PutExtra("dealer_name", userInput.Text);
+                Context mContext = Android.App.Application.Context;
+                AppPreferences ap = new AppPreferences (mContext);
+                string key = userInput.Text;
+                ap.saveUsername(key);
                 StartActivity(res);
             }
         }

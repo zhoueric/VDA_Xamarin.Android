@@ -77,17 +77,17 @@ namespace VDA_Android
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int cardview_dark_background = 2131034112;
+			// aapt resource value: 0x7f040000
+			public const int cardview_dark_background = 2130968576;
 			
-			// aapt resource value: 0x7f050001
-			public const int cardview_light_background = 2131034113;
+			// aapt resource value: 0x7f040001
+			public const int cardview_light_background = 2130968577;
 			
-			// aapt resource value: 0x7f050002
-			public const int cardview_shadow_end_color = 2131034114;
+			// aapt resource value: 0x7f040002
+			public const int cardview_shadow_end_color = 2130968578;
 			
-			// aapt resource value: 0x7f050003
-			public const int cardview_shadow_start_color = 2131034115;
+			// aapt resource value: 0x7f040003
+			public const int cardview_shadow_start_color = 2130968579;
 			
 			static Color()
 			{
@@ -102,14 +102,14 @@ namespace VDA_Android
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int cardview_compat_inset_shadow = 2131099648;
+			// aapt resource value: 0x7f050000
+			public const int cardview_compat_inset_shadow = 2131034112;
 			
-			// aapt resource value: 0x7f060001
-			public const int cardview_default_elevation = 2131099649;
+			// aapt resource value: 0x7f050001
+			public const int cardview_default_elevation = 2131034113;
 			
-			// aapt resource value: 0x7f060002
-			public const int cardview_default_radius = 2131099650;
+			// aapt resource value: 0x7f050002
+			public const int cardview_default_radius = 2131034114;
 			
 			static Dimension()
 			{
@@ -275,17 +275,17 @@ namespace VDA_Android
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f040001
-			public const int Base_CardView = 2130968577;
+			// aapt resource value: 0x7f060000
+			public const int Base_CardView = 2131099648;
 			
-			// aapt resource value: 0x7f040000
-			public const int CardView = 2130968576;
+			// aapt resource value: 0x7f060001
+			public const int CardView = 2131099649;
 			
-			// aapt resource value: 0x7f040002
-			public const int CardView_Dark = 2130968578;
+			// aapt resource value: 0x7f060002
+			public const int CardView_Dark = 2131099650;
 			
-			// aapt resource value: 0x7f040003
-			public const int CardView_Light = 2130968579;
+			// aapt resource value: 0x7f060003
+			public const int CardView_Light = 2131099651;
 			
 			static Style()
 			{

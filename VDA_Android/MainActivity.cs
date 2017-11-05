@@ -14,6 +14,8 @@ using Android.Speech;
 using System.IO;
 using System.Threading.Tasks;
 using Android.Graphics;
+using VDA_Android.Models;
+
 
 namespace VDA_Android
 {
@@ -24,6 +26,11 @@ namespace VDA_Android
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+
+            //Username
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+            string dealer_name = ap.getUsername();
 
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
@@ -42,6 +49,8 @@ namespace VDA_Android
 
             buttonConfirm = FindViewById<Button>(Resource.Id.confirmText);
             buttonTryAgain = FindViewById<Button>(Resource.Id.tryAgain);
+
+
 
 
             buttonConfirm.Click += delegate

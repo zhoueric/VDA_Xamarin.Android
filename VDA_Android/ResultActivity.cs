@@ -31,6 +31,10 @@ namespace VDA_Android
         {
             base.OnCreate(savedInstanceState);
 
+            Context mContext = Android.App.Application.Context;
+            AppPreferences ap = new AppPreferences(mContext);
+            string dealer_name = ap.getUsername();
+
             SetContentView(Resource.Layout.Result);
 
             //ResultObject relatedKPI = JsonConvert.DeserializeObject<ResultObject>("{\"action_list\": null, \"brand\": \"\", \"dealer\": null, \"id\": 0, \"month\": null, \"name\": \"Dealer Sales\", \"p_val\": 0.4955333944296611, \"segment\": \"Total\", \"type\": null, \"value\": 399}");
@@ -52,7 +56,7 @@ namespace VDA_Android
 
                 string urlQuery = "query=" + queryParsed + '&';
 
-                string urlDealer = "dealer_name=" + "omega";
+                string urlDealer = "dealer_name=" + dealer_name;
 
                 string url = urlBase + urlQuery + urlDealer;
 
@@ -69,7 +73,7 @@ namespace VDA_Android
 
                 string urlQuery = "query=" + queryParsed + '&';
 
-                string urlDealer = "dealer_name=" + "omega";
+                string urlDealer = "dealer_name=" + dealer_name;
 
                 string url = urlBase + urlQuery + urlDealer;
 
