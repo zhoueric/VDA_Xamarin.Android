@@ -86,15 +86,14 @@ namespace VDA_Android
 
             butNeeded.PerformClick();
 
-            butToActions = FindViewById<Button>(Resource.Id.butToActions);
+        }
 
-            butToActions.Click += delegate
-            {
-                var act = new Intent(this, typeof(ActionActivity));
-                //act.PutExtra("speechStr", speechStr);
-                StartActivity(act);
-            };
-
+        private void StartActions(string name, double p_val)
+        {
+            var act = new Intent(this, typeof(ActionActivity));
+            act.PutExtra("name", name);
+            act.PutExtra("p_val", p_val.ToString());
+            StartActivity(act);
         }
 
         private async Task<JsonValue> FetchKPIAsync(string url)
@@ -141,6 +140,13 @@ namespace VDA_Android
 
             result1.Text = text;
 
+            butToActions = FindViewById<Button>(Resource.Id.butToActions);
+
+            butToActions.Click += delegate
+            {
+                StartActions(relatedKPI.name, relatedKPI.p_val);
+            };
+
             butToActions.Visibility = ViewStates.Visible;
         }
 
@@ -175,7 +181,7 @@ namespace VDA_Android
                 linearLayout.LayoutParameters = ll2;
 
                 linearLayout.Orientation = Orientation.Vertical;
-                linearLayout.SetGravity(GravityFlags.Center);
+                linearLayout.SetGravity(GravityFlags.CenterHorizontal);
                 linearLayout.SetPadding(8, 8, 8, 8);
 
                 // ========================================================================================
@@ -191,7 +197,7 @@ namespace VDA_Android
 
                 valueTextView.Text = KPI.brand + " " + KPI.segment + " " + KPI.name
                 + ": " + KPI.value.ToString();
-                valueTextView.TextSize = 25;
+                valueTextView.TextSize = 15;
 
                 // add the textview to the linearLayout
                 linearLayout.AddView(valueTextView);
@@ -237,6 +243,27 @@ namespace VDA_Android
                 linearLayout.AddView(resultTextView);
 
                 // =========================================================================================
+
+                // create a new button to link KPI to action
+
+                var actionsButton = new Button(this);
+
+                LinearLayout.LayoutParams ll5 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
+                ll5.SetMargins(0, 10, 0, 10);
+
+                actionsButton.LayoutParameters = ll5;
+
+                actionsButton.Text = "View Actions";
+
+                actionsButton.Click += delegate
+                {
+                    StartActions(KPI.name, KPI.p_val);
+                };
+
+                linearLayout.AddView(actionsButton);
+
+                //=========================================================================================
 
                 // create a new frameLayout for border
 

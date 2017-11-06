@@ -26,6 +26,32 @@ namespace VDA_Android
             ColorDrawable colorDrawable = new ColorDrawable(Color.Rgb(153,204,0));
             ActionBar.SetBackgroundDrawable(colorDrawable);
 
+            butActions = FindViewById<Button>(Resource.Id.butRelated);
+
+            string KPIname = Intent.GetStringExtra("name") ?? "Data not available";
+
+            string KPIp_val = Intent.GetStringExtra("p_val") ?? "Data not available";
+
+            var test = FindViewById<TextView>(Resource.Id.action12);
+            test.Text = KPIname + " " + KPIp_val;
+
+            //// Starts async for related KPI
+            //butActions.Click += async (sender, e) =>
+            //{
+            //    string urlBase = "https://msufall2017virtualdealershipadviserapi.azurewebsites.net/api/RelatedKpi?";
+
+            //    string queryParsed = Uri.EscapeDataString(speechStr);
+
+            //    string urlQuery = "query=" + queryParsed + '&';
+
+            //    string urlDealer = "dealer_name=" + dealer_name;
+
+            //    string url = urlBase + urlQuery + urlDealer;
+
+            //    jsonRelated = await FetchKPIAsync(url);
+
+            //    DisplayJsonRelated();
+            //};
 
             var startOverButton = FindViewById<Button>(Resource.Id.startOverButton);
 
@@ -37,5 +63,7 @@ namespace VDA_Android
             };
 
         }
+
+        private Button butActions;
     }
 }

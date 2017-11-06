@@ -17,12 +17,18 @@
         android:textColor="#000"
         android:textSize="30sp"
         android:textStyle="normal" />
+    <Button
+        android:id="@+id/butActions"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
     <TextView
-        android:id="@+id/action1"
+        android:id="@+id/action12"
         android:text="Your Dealer Sales has a value of 120.\nUse Premium MMO to take a look at your sales effectiveness to determine the level of additional opportunity."
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

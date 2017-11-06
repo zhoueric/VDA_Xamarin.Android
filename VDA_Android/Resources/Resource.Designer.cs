@@ -77,17 +77,17 @@ namespace VDA_Android
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f040000
-			public const int cardview_dark_background = 2130968576;
+			// aapt resource value: 0x7f050000
+			public const int cardview_dark_background = 2131034112;
 			
-			// aapt resource value: 0x7f040001
-			public const int cardview_light_background = 2130968577;
+			// aapt resource value: 0x7f050001
+			public const int cardview_light_background = 2131034113;
 			
-			// aapt resource value: 0x7f040002
-			public const int cardview_shadow_end_color = 2130968578;
+			// aapt resource value: 0x7f050002
+			public const int cardview_shadow_end_color = 2131034114;
 			
-			// aapt resource value: 0x7f040003
-			public const int cardview_shadow_start_color = 2130968579;
+			// aapt resource value: 0x7f050003
+			public const int cardview_shadow_start_color = 2131034115;
 			
 			static Color()
 			{
@@ -102,14 +102,14 @@ namespace VDA_Android
 		public partial class Dimension
 		{
 			
-			// aapt resource value: 0x7f050000
-			public const int cardview_compat_inset_shadow = 2131034112;
+			// aapt resource value: 0x7f060000
+			public const int cardview_compat_inset_shadow = 2131099648;
 			
-			// aapt resource value: 0x7f050001
-			public const int cardview_default_elevation = 2131034113;
+			// aapt resource value: 0x7f060001
+			public const int cardview_default_elevation = 2131099649;
 			
-			// aapt resource value: 0x7f050002
-			public const int cardview_default_radius = 2131034114;
+			// aapt resource value: 0x7f060002
+			public const int cardview_default_radius = 2131099650;
 			
 			static Dimension()
 			{
@@ -155,71 +155,77 @@ namespace VDA_Android
 		public partial class Id
 		{
 			
+			// aapt resource value: 0x7f080007
+			public const int Button03 = 2131230727;
+			
 			// aapt resource value: 0x7f080005
-			public const int Button03 = 2131230725;
+			public const int LinearLayout02 = 2131230725;
 			
-			// aapt resource value: 0x7f080003
-			public const int LinearLayout02 = 2131230723;
+			// aapt resource value: 0x7f080004
+			public const int action1 = 2131230724;
 			
-			// aapt resource value: 0x7f080001
-			public const int action1 = 2131230721;
+			// aapt resource value: 0x7f080002
+			public const int action12 = 2131230722;
 			
 			// aapt resource value: 0x7f080000
 			public const int actionTitle = 2131230720;
 			
-			// aapt resource value: 0x7f08000e
-			public const int btnSpeak = 2131230734;
+			// aapt resource value: 0x7f080010
+			public const int btnSpeak = 2131230736;
+			
+			// aapt resource value: 0x7f080001
+			public const int butActions = 2131230721;
+			
+			// aapt resource value: 0x7f080017
+			public const int butNeeded = 2131230743;
+			
+			// aapt resource value: 0x7f080016
+			public const int butRelated = 2131230742;
 			
 			// aapt resource value: 0x7f080015
-			public const int butNeeded = 2131230741;
+			public const int butToActions = 2131230741;
 			
-			// aapt resource value: 0x7f080014
-			public const int butRelated = 2131230740;
-			
-			// aapt resource value: 0x7f080013
-			public const int butToActions = 2131230739;
-			
-			// aapt resource value: 0x7f080002
-			public const int button1 = 2131230722;
-			
-			// aapt resource value: 0x7f080008
-			public const int buttonWrap = 2131230728;
+			// aapt resource value: 0x7f080003
+			public const int button1 = 2131230723;
 			
 			// aapt resource value: 0x7f08000a
-			public const int confirmText = 2131230730;
-			
-			// aapt resource value: 0x7f080011
-			public const int p1 = 2131230737;
-			
-			// aapt resource value: 0x7f080012
-			public const int result1 = 2131230738;
-			
-			// aapt resource value: 0x7f08000f
-			public const int resultLayout = 2131230735;
-			
-			// aapt resource value: 0x7f08000d
-			public const int speechResultBottom = 2131230733;
+			public const int buttonWrap = 2131230730;
 			
 			// aapt resource value: 0x7f08000c
-			public const int speechResultTop = 2131230732;
+			public const int confirmText = 2131230732;
 			
-			// aapt resource value: 0x7f080004
-			public const int startOverButton = 2131230724;
+			// aapt resource value: 0x7f080013
+			public const int p1 = 2131230739;
 			
-			// aapt resource value: 0x7f080009
-			public const int tryAgain = 2131230729;
+			// aapt resource value: 0x7f080014
+			public const int result1 = 2131230740;
+			
+			// aapt resource value: 0x7f080011
+			public const int resultLayout = 2131230737;
+			
+			// aapt resource value: 0x7f08000f
+			public const int speechResultBottom = 2131230735;
+			
+			// aapt resource value: 0x7f08000e
+			public const int speechResultTop = 2131230734;
 			
 			// aapt resource value: 0x7f080006
-			public const int usLogo = 2131230726;
-			
-			// aapt resource value: 0x7f080007
-			public const int userInput = 2131230727;
-			
-			// aapt resource value: 0x7f080010
-			public const int value1 = 2131230736;
+			public const int startOverButton = 2131230726;
 			
 			// aapt resource value: 0x7f08000b
-			public const int welcome = 2131230731;
+			public const int tryAgain = 2131230731;
+			
+			// aapt resource value: 0x7f080008
+			public const int usLogo = 2131230728;
+			
+			// aapt resource value: 0x7f080009
+			public const int userInput = 2131230729;
+			
+			// aapt resource value: 0x7f080012
+			public const int value1 = 2131230738;
+			
+			// aapt resource value: 0x7f08000d
+			public const int welcome = 2131230733;
 			
 			static Id()
 			{
@@ -275,17 +281,17 @@ namespace VDA_Android
 		public partial class Style
 		{
 			
-			// aapt resource value: 0x7f060000
-			public const int Base_CardView = 2131099648;
+			// aapt resource value: 0x7f040001
+			public const int Base_CardView = 2130968577;
 			
-			// aapt resource value: 0x7f060001
-			public const int CardView = 2131099649;
+			// aapt resource value: 0x7f040000
+			public const int CardView = 2130968576;
 			
-			// aapt resource value: 0x7f060002
-			public const int CardView_Dark = 2131099650;
+			// aapt resource value: 0x7f040002
+			public const int CardView_Dark = 2130968578;
 			
-			// aapt resource value: 0x7f060003
-			public const int CardView_Light = 2131099651;
+			// aapt resource value: 0x7f040003
+			public const int CardView_Light = 2130968579;
 			
 			static Style()
 			{
