@@ -50,9 +50,6 @@ namespace VDA_Android
             buttonConfirm = FindViewById<Button>(Resource.Id.confirmText);
             buttonTryAgain = FindViewById<Button>(Resource.Id.tryAgain);
 
-
-
-
             buttonConfirm.Click += delegate
             {
                 var res = new Intent(this, typeof(ResultActivity));

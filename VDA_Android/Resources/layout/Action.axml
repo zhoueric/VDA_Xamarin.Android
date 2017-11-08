@@ -1,130 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/actionTitle"
-        android:text="Here are your Action Items: "
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginRight="20.0dp"
-        android:layout_marginLeft="20.0dp"
-        android:layout_marginBottom="20dp"
-        android:gravity="center"
-        android:layout_gravity="center"
-        android:textColor="#000"
-        android:textSize="30sp"
-        android:textStyle="normal" />
-    <Button
-        android:id="@+id/butActions"
-        android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="gone" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-    <TextView
-        android:id="@+id/action12"
-        android:text="Your Dealer Sales has a value of 120.\nUse Premium MMO to take a look at your sales effectiveness to determine the level of additional opportunity."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="normal" />
-    <Button
-        android:id="@+id/button1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:text="Take Action"
-        android:backgroundTint="@android:color/holo_green_light" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-    <TextView
-        android:id="@+id/action1"
-        android:text="Your Dealer Sales has a value of 120.\nEvaluate Dealer Business Intelligence to determine how your profit compares to other dealers."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="normal" />
-    <Button
-        android:id="@+id/button1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:text="Take Action"
-        android:backgroundTint="@android:color/holo_green_light" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
-    <TextView
-        android:id="@+id/action1"
-        android:text="Your Dealer Sales has a value of 120.\nLeverage Sales Leads to find additional interest in your area."
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:textColor="#000"
-        android:textSize="20sp"
-        android:textStyle="normal" />
-    <Button
-        android:id="@+id/button1"
-        android:layout_height="wrap_content"
-        android:layout_width="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginBottom="10dp"
-        android:text="Take Action"
-        android:backgroundTint="@android:color/holo_green_light" />
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="@android:color/darker_gray" />
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:cardview="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="fill_parent"
+      android:layout_height="fill_parent">
     <LinearLayout
-        android:id="@+id/LinearLayout02"
+        android:id="@+id/actionLayout"
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:gravity="center"
+        android:padding="10dp">
+      <TextView
+          android:id="@+id/actionTitle"
+          android:text="Here are your Action Items: "
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="20dp"
+          android:layout_marginRight="20.0dp"
+          android:layout_marginLeft="20.0dp"
+          android:layout_marginBottom="20dp"
+          android:gravity="center"
+          android:layout_gravity="center"
+          android:textColor="#000"
+          android:textSize="30sp"
+          android:textStyle="normal" />
+    </LinearLayout>
+    <Button
+      android:id="@+id/butActions"
+      android:layout_gravity="center"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:visibility="gone" />
+    <LinearLayout
+        android:id="@+id/navLL"
         android:layout_height="wrap_content"
         android:layout_width="fill_parent"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp">
-        <Button
+      <Button
             android:id="@+id/startOverButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Start Over"
             android:backgroundTint="@android:color/holo_red_light" />
-        <Button
-            android:id="@+id/Button03"
+      <Button
+            android:id="@+id/finishedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Finished"
             android:backgroundTint="@android:color/holo_blue_bright" />
     </LinearLayout>
-</LinearLayout>
+  </LinearLayout>
+</ScrollView>

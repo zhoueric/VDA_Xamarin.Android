@@ -68,6 +68,7 @@
     <Compile Include="ActionActivity.cs" />
     <Compile Include="LoginActivity.cs" />
     <Compile Include="MainActivity.cs" />
+    <Compile Include="Models\ActionObject.cs" />
     <Compile Include="Models\AppPreferences.cs" />
     <Compile Include="Models\NeededObject.cs" />
     <Compile Include="Models\ResultObject.cs" />

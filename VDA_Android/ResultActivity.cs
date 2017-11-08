@@ -159,7 +159,7 @@ namespace VDA_Android
             foreach (var KPI in neededKPI)
             {
                 // ========================================================================================
-               
+
                 // create a new cardview
                 var card = new CardView(this);
 
