@@ -19,7 +19,7 @@ using VDA_Android.Models;
 
 namespace VDA_Android
 {
-    [Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
+    [Activity(Label = "Virtual Dealership Advisor")]
 
     public class MainActivity : Activity
     {
@@ -89,10 +89,11 @@ namespace VDA_Android
 
                 //speechStr = resultList[0];
 
+
                 //speechResult.Text = "What you said was: \n\n" + speechStr +
                 //    " \n\nIs this correct?";
 
-                speechStr = "How can I improve my sedan sales?";
+                speechStr = "How can I improve my car sales?";
 
                 userInput.Text = speechStr;
 
