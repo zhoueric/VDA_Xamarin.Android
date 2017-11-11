@@ -90,7 +90,7 @@ namespace VDA_Android
                 //res.PutExtra("dealer_name", userInput.Text);
                 Context mContext = Android.App.Application.Context;
                 AppPreferences ap = new AppPreferences (mContext);
-                string key = usernameInput.Text;
+                string key = login_credentials.dealer_name;
                 ap.saveUsername(key);
                 StartActivity(res);
             }
