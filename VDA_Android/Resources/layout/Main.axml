@@ -76,8 +76,7 @@
         android:layout_width="fill_parent"
         android:layout_marginTop="80dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:visibility="gone">
+        android:layout_marginRight="10dp">
       <Button
           android:id="@+id/tryAgain"
           android:text="Try Again"
@@ -90,8 +89,7 @@
           android:text="Confirm"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:visibility="gone" />
+          android:layout_weight="1" />
     </LinearLayout>
     <ImageView
         android:id="@+id/btnSpeak"
