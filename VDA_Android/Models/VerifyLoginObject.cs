@@ -15,10 +15,17 @@ namespace VDA_Android.Models
 {
     class VerifyLoginObject
     {
-        public bool validUser = false;
-        public bool isAdmin = false;
+        public bool isAdmin { get; set; }
+        public bool validUser { get; set; }
+        public string username { get; set; }
+        public string password { get; set; }
+        public string first_name { get; set; }
+        public string last_name { get; set; }
+        public string dealer_name { get; set; }
     }
-    
 
-   
+
+
+
+
 }
