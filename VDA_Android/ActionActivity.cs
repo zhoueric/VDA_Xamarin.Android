@@ -163,7 +163,7 @@ namespace VDA_Android
 
                 takeActionButton.LayoutParameters = ll5;
 
-                takeActionButton.Text = "View Actions";
+                takeActionButton.Text = "Take Action";
 
                 //actionsButton.Click += delegate
                 //{
@@ -171,6 +171,7 @@ namespace VDA_Android
                 //};
 
                 linearLayout.AddView(takeActionButton);
+
 
                 //=========================================================================================
 
