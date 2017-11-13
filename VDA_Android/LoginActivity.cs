@@ -68,6 +68,7 @@ namespace VDA_Android
                 string url = $"{urlBase}username={username}&password={password}";
                 //string url = urlBase + " usernme =" + Uri.EscapeDataString(usernameInput.Text) + "&password=" + Uri.EscapeDataString(passwordInput.Text);
 
+
                 progress = new Android.App.ProgressDialog(this);
                 progress.Indeterminate = true;
                 progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
@@ -78,11 +79,15 @@ namespace VDA_Android
                 jsonLogin = await FetchLoginCredentialsAsync(url);
                 if(jsonLogin != "")
                 {
+                    
+
                     DisplayJsonLogin();
+                    progress.Hide();
                 }
                 else
                 {
                     loginResponse.Text = "Incorrect Username or Password";
+                    progress.Hide();
                 }
 
 
