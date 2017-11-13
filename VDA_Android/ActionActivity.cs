@@ -120,8 +120,8 @@ namespace VDA_Android
                 // create a new linearlayout
                 var linearLayout = new LinearLayout(this);
 
-                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent,
-                    295);
+                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
                 linearLayout.LayoutParameters = ll2;
 
                 linearLayout.Orientation = Orientation.Vertical;

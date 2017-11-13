@@ -213,7 +213,7 @@ namespace VDA_Android
                 var card = new CardView(this);
 
                 // set card elevation
-                card.SetMinimumHeight(350);
+                card.SetMinimumHeight(800);
                 card.UseCompatPadding = true;
                 card.Elevation = 4;
                 card.Radius = 5;
@@ -225,8 +225,8 @@ namespace VDA_Android
                 // create a new linearlayout
                 var linearLayout = new LinearLayout(this);
 
-                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent,
-                    295);
+                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
                 linearLayout.LayoutParameters = ll2;
 
                 linearLayout.Orientation = Orientation.Vertical;
