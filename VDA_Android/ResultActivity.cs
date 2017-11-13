@@ -21,6 +21,10 @@ using System.IO;
 using Android.Graphics;
 using Android.Support.V7.Widget;
 
+//using System.Net.Http;
+//using System.Net.Http.Headers;
+
+
 namespace VDA_Android
 {
     [Activity(Label = "ResultActivity")]
@@ -98,56 +102,101 @@ namespace VDA_Android
 
         private async Task<JsonValue> FetchKPIAsync(string url)
         {
+            //var client = new HttpClient();
+
+            //client.DefaultRequestHeaders.Accept.Clear();
+            ////add any default headers below this
+            //client.DefaultRequestHeaders.Accept.Add(
+            //    new MediaTypeWithQualityHeaderValue("application/json"));
+
+            //HttpResponseMessage response = await client.GetAsync(url);
+
+            //string json_string = "";
+            //if (response.StatusCode == HttpStatusCode.OK)
+            //{
+            //    json_string = await response.Content.ReadAsStringAsync();
+
+            //}
+            //return json_string;
             WebRequest request = WebRequest.Create(new Uri(url));
             request.ContentType = "application/json";
             request.Method = "GET";
 
-            using (WebResponse response = await request.GetResponseAsync())
+            try
             {
-                using (Stream stream = response.GetResponseStream())
+                using (WebResponse response = await request.GetResponseAsync())
                 {
-                    JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
-                    Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
+                    using (Stream stream = response.GetResponseStream())
+                    {
+                        JsonValue jsonDoc = await Task.Run(() => JsonObject.Load(stream));
+                        Console.Out.WriteLine("Response: {0}", jsonDoc.ToString());
 
-                    return jsonDoc;
+                        return jsonDoc;
+                    }
                 }
             }
+            catch{
+                return null;
+            }
+            
         }
 
         private void DisplayJsonRelated()
         {
-            string a = jsonRelated.ToString();
-
-            relatedKPI = JsonConvert.DeserializeObject<ResultObject>(jsonRelated.ToString());
-
-            double p = relatedKPI.p_val;
-
-            var value1 = FindViewById<TextView>(Resource.Id.value1);
-            value1.Text = relatedKPI.brand + " " + relatedKPI.segment + " " + relatedKPI.name
-                + ": " + relatedKPI.value.ToString();
-            value1.Visibility = ViewStates.Visible;
-
-            var p1 = FindViewById<TextView>(Resource.Id.p1);
-            p1.Text = "KPI Percentile: " + Math.Round(relatedKPI.p_val * 100, 2).ToString() + "%";
-            p1.Visibility = ViewStates.Visible;
-
-            var result1 = FindViewById<TextView>(Resource.Id.result1);
-            string text = "You are performing ";
-
-            text += p > 0.5 ? "above" : "below";
-
-            text += " average on this measurment.\n\nClick below to view actions you can take to improve on this metric.";
-
-            result1.Text = text;
-
-            butToActions = FindViewById<Button>(Resource.Id.butToActions);
-
-            butToActions.Click += delegate
+            try
             {
-                StartActions(relatedKPI.name, relatedKPI.p_val);
-            };
+                string a = jsonRelated.ToString();
 
-            butToActions.Visibility = ViewStates.Visible;
+                relatedKPI = JsonConvert.DeserializeObject<ResultObject>(jsonRelated.ToString());
+
+                double p = relatedKPI.p_val;
+
+                var value1 = FindViewById<TextView>(Resource.Id.value1);
+                var brand = relatedKPI.brand == "all" ? "" : relatedKPI.brand + " ";
+                var model = relatedKPI.model == "model" ? "" : relatedKPI.model + " ";
+                var segment = relatedKPI.segment == "segment" ? "" : relatedKPI.segment + " ";
+
+                value1.Text = brand + model + segment + relatedKPI.name
+                    + ": " + relatedKPI.value.ToString();
+                value1.Visibility = ViewStates.Visible;
+
+                var p1 = FindViewById<TextView>(Resource.Id.p1);
+                p1.Text = "KPI Percentile: " + Math.Round(relatedKPI.p_val * 100, 2).ToString() + "%";
+                p1.Visibility = ViewStates.Visible;
+
+                var result1 = FindViewById<TextView>(Resource.Id.result1);
+                string text = "You are performing ";
+
+                text += p > 0.5 ? "above" : "below";
+
+                text += " average on this measurment.\n\nClick below to view actions you can take to improve on this metric.";
+
+                var frame = FindViewById<FrameLayout>(Resource.Id.relatedFrameLayout);
+                if (p < .3)
+                {
+                    frame.SetBackgroundResource(Resource.Drawable.card_edge_red);
+                }
+                else if (p < .5)
+                {
+                    frame.SetBackgroundResource(Resource.Drawable.card_edge_yellow);
+                }
+                result1.Text = text;
+
+                butToActions = FindViewById<Button>(Resource.Id.butToActions);
+
+                butToActions.Click += delegate
+                {
+                    StartActions(relatedKPI.name, relatedKPI.p_val);
+                };
+
+                butToActions.Visibility = ViewStates.Visible;
+            }
+            catch
+            {
+                var value1 = FindViewById<TextView>(Resource.Id.value1);
+                value1.Text = "I could not found any related KPI for your question";
+            }
+            
         }
 
         private void DisplayJsonNeeded()
@@ -164,7 +213,7 @@ namespace VDA_Android
                 var card = new CardView(this);
 
                 // set card elevation
-                card.SetMinimumHeight(200);
+                card.SetMinimumHeight(350);
                 card.UseCompatPadding = true;
                 card.Elevation = 4;
                 card.Radius = 5;
@@ -240,7 +289,14 @@ namespace VDA_Android
 
                 resultTextView.Text = text;
 
+                
+
                 linearLayout.AddView(resultTextView);
+                //var testText = new TextView(this);
+
+                //testText.Text = "hello world";
+
+                //linearLayout.AddView(testText);
 
                 // =========================================================================================
 
@@ -251,7 +307,6 @@ namespace VDA_Android
                 LinearLayout.LayoutParams ll5 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
                     ViewGroup.LayoutParams.WrapContent);
                 ll5.SetMargins(0, 10, 0, 10);
-
                 actionsButton.LayoutParameters = ll5;
 
                 actionsButton.Text = "View Actions";
@@ -261,7 +316,18 @@ namespace VDA_Android
                     StartActions(KPI.name, KPI.p_val);
                 };
 
+                //var testText1 = new TextView(this);
+
+                //testText1.Text = "hello world";
+
+                //linearLayout.AddView(testText1);
                 linearLayout.AddView(actionsButton);
+                //var testText2 = new TextView(this);
+
+                //testText2.Text = "hello world";
+
+                //linearLayout.AddView(testText2);
+
 
                 //=========================================================================================
 
