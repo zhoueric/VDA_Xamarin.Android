@@ -153,8 +153,8 @@ namespace VDA_Android
 
                 var value1 = FindViewById<TextView>(Resource.Id.value1);
                 var brand = relatedKPI.brand == "all" ? "" : relatedKPI.brand + " ";
-                var model = relatedKPI.model == "model" ? "" : relatedKPI.model + " ";
-                var segment = relatedKPI.segment == "segment" ? "" : relatedKPI.segment + " ";
+                var model = relatedKPI.model == "all" ? "" : relatedKPI.model + " ";
+                var segment = relatedKPI.segment == "all" ? "" : relatedKPI.segment + " ";
 
                 value1.Text = brand + model + segment + relatedKPI.name
                     + ": " + relatedKPI.value.ToString();
@@ -244,7 +244,7 @@ namespace VDA_Android
                 ll.SetMargins(0, 10, 0, 10);
                 valueTextView.LayoutParameters = ll;
 
-                valueTextView.Text = KPI.brand + " " + KPI.segment + " " + KPI.name
+                valueTextView.Text = KPI.brand + " " + KPI.model + " " + KPI.name
                 + ": " + KPI.value.ToString();
                 valueTextView.TextSize = 15;
 
