@@ -34,6 +34,7 @@ namespace VDA_Android
     [Activity(Label = "LoginActivity", MainLauncher = true)]
     class LoginActivity : Activity
     {
+        Android.App.ProgressDialog progress;
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -66,6 +67,14 @@ namespace VDA_Android
                 string password = Uri.EscapeDataString(passwordInput.Text);
                 string url = $"{urlBase}username={username}&password={password}";
                 //string url = urlBase + " usernme =" + Uri.EscapeDataString(usernameInput.Text) + "&password=" + Uri.EscapeDataString(passwordInput.Text);
+
+                progress = new Android.App.ProgressDialog(this);
+                progress.Indeterminate = true;
+                progress.SetProgressStyle(Android.App.ProgressDialogStyle.Spinner);
+                progress.SetMessage("Loading... Please wait...");
+                progress.SetCancelable(false);
+                progress.Show();
+
                 jsonLogin = await FetchLoginCredentialsAsync(url);
                 if(jsonLogin != "")
                 {
@@ -75,7 +84,7 @@ namespace VDA_Android
                 {
                     loginResponse.Text = "Incorrect Username or Password";
                 }
-                
+
 
             };
 
