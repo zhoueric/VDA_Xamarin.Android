@@ -30,7 +30,8 @@
             android:layout_marginBottom="4dp"
             cardview:cardElevation="4dp"
             cardview:cardCornerRadius="5dp">
-            <FrameLayout
+          <FrameLayout
+                android:id="@+id/relatedFrameLayout" 
                 android:background="@drawable/card_edge_green"
                 android:layout_width="4dp"
                 android:layout_height="match_parent" />
