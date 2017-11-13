@@ -19,7 +19,7 @@ using VDA_Android.Models;
 
 namespace VDA_Android
 {
-    [Activity(Label = "Virtual Dealership Advisor")]
+    [Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
 
     public class MainActivity : Activity
     {

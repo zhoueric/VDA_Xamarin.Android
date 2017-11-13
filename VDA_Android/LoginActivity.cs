@@ -31,7 +31,7 @@ namespace VDA_Android
 {
     //[Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
 
-    [Activity(Label = "LoginActivity", MainLauncher = true)]
+    [Activity(Label = "LoginActivity")]
     class LoginActivity : Activity
     {
         protected override void OnCreate(Bundle savedInstanceState)

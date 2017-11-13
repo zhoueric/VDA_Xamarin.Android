@@ -142,7 +142,7 @@ namespace VDA_Android
 
                 descriptionTextView.Text = KPI.actionP;
 
-                descriptionTextView.TextSize = 25;
+                descriptionTextView.TextSize = 15;
 
                 descriptionTextView.SetTextColor(Color.Black);
 
@@ -165,13 +165,33 @@ namespace VDA_Android
 
                 takeActionButton.Text = "Take Action";
 
-                //actionsButton.Click += delegate
-                //{
-                //    StartActions(KPI.name, KPI.p_val);
-                //};
+                takeActionButton.Click += delegate
+                {
+                    TakeAction(KPI.actionLink);
+                };
 
                 linearLayout.AddView(takeActionButton);
 
+                // ========================================================================================
+
+                // create a new button to send email
+
+                var sendEmailButton = new Button(this);
+
+                LinearLayout.LayoutParams ll6 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
+                ll6.SetMargins(0, 10, 0, 10);
+
+                sendEmailButton.LayoutParameters = ll6;
+
+                sendEmailButton.Text = "Share";
+
+                sendEmailButton.Click += delegate
+                {
+                    SendEmail(KPI.actionP);
+                };
+
+                linearLayout.AddView(sendEmailButton);
 
                 //=========================================================================================
 
@@ -191,10 +211,31 @@ namespace VDA_Android
 
                 actionLayout.AddView(card);
             }
-
-
-
         }
+
+        public void TakeAction(string url)
+        {
+            var uri = Android.Net.Uri.Parse(url);
+            var intent = new Intent(Intent.ActionView, uri);
+            StartActivity(intent);
+        }
+
+        public void SendEmail(string action)
+        {
+            var email = new Intent(Intent.ActionSend);
+
+            email.PutExtra(Intent.ExtraEmail,
+                new string[] { "personTo@msu.edu" });
+
+            email.PutExtra(Intent.ExtraSubject, "Request for Action from VDA");
+
+            email.PutExtra(Intent.ExtraText, action);
+
+            email.SetType("message/rfc822");
+
+            StartActivity(email);
+        }
+
         public LinearLayout actionLayout;
 
         private List<ActionObject> actionKPI;
