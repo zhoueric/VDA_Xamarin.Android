@@ -176,13 +176,13 @@ namespace VDA_Android
                 // create a new linearlayout
                 var linearLayout = new LinearLayout(this);
 
-                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent,
-                    295);
+                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
                 linearLayout.LayoutParameters = ll2;
 
                 linearLayout.Orientation = Orientation.Vertical;
                 linearLayout.SetGravity(GravityFlags.CenterHorizontal);
-                linearLayout.SetPadding(8, 8, 8, 8);
+                linearLayout.SetPadding(3,3,3,3);
 
                 // ========================================================================================
 
