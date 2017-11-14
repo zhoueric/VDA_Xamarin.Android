@@ -120,8 +120,8 @@ namespace VDA_Android
                 // create a new linearlayout
                 var linearLayout = new LinearLayout(this);
 
-                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.FillParent,
-                    295);
+                LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
+                    ViewGroup.LayoutParams.WrapContent);
                 linearLayout.LayoutParameters = ll2;
 
                 linearLayout.Orientation = Orientation.Vertical;
@@ -188,7 +188,7 @@ namespace VDA_Android
 
                 sendEmailButton.Click += delegate
                 {
-                    SendEmail(KPI.actionP);
+                    SendEmail(KPI.actionP, KPI.actionLink);
                 };
 
                 linearLayout.AddView(sendEmailButton);
@@ -220,16 +220,18 @@ namespace VDA_Android
             StartActivity(intent);
         }
 
-        public void SendEmail(string action)
+        public void SendEmail(string action, string actionLink)
         {
             var email = new Intent(Intent.ActionSend);
 
             email.PutExtra(Intent.ExtraEmail,
-                new string[] { "personTo@msu.edu" });
+                new string[] { "" });
 
             email.PutExtra(Intent.ExtraSubject, "Request for Action from VDA");
 
-            email.PutExtra(Intent.ExtraText, action);
+            email.PutExtra(Intent.ExtraText, action + " Click the link to take action: " + actionLink);
+
+            //email.PutExtra(Intent.ExtraText, "Click the link to take action: " + actionLink);
 
             email.SetType("message/rfc822");
 

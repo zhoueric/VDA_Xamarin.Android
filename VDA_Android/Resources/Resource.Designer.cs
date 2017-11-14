@@ -131,16 +131,19 @@ namespace VDA_Android
 			public const int card_edge_red = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int logo = 2130837506;
+			public const int card_edge_yellow = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int microphone = 2130837507;
+			public const int logo = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int microphone2 = 2130837508;
+			public const int microphone = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int microphone3 = 2130837509;
+			public const int microphone2 = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int microphone3 = 2130837510;
 			
 			static Drawable()
 			{
@@ -167,14 +170,14 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080002
 			public const int butActions = 2131230722;
 			
+			// aapt resource value: 0x7f080019
+			public const int butNeeded = 2131230745;
+			
 			// aapt resource value: 0x7f080018
-			public const int butNeeded = 2131230744;
+			public const int butRelated = 2131230744;
 			
 			// aapt resource value: 0x7f080017
-			public const int butRelated = 2131230743;
-			
-			// aapt resource value: 0x7f080016
-			public const int butToActions = 2131230742;
+			public const int butToActions = 2131230743;
 			
 			// aapt resource value: 0x7f08000b
 			public const int buttonWrap = 2131230731;
@@ -191,14 +194,17 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080003
 			public const int navLL = 2131230723;
 			
-			// aapt resource value: 0x7f080014
-			public const int p1 = 2131230740;
+			// aapt resource value: 0x7f080015
+			public const int p1 = 2131230741;
 			
 			// aapt resource value: 0x7f08000a
 			public const int passwordInput = 2131230730;
 			
-			// aapt resource value: 0x7f080015
-			public const int result1 = 2131230741;
+			// aapt resource value: 0x7f080013
+			public const int relatedFrameLayout = 2131230739;
+			
+			// aapt resource value: 0x7f080016
+			public const int result1 = 2131230742;
 			
 			// aapt resource value: 0x7f080012
 			public const int resultLayout = 2131230738;
@@ -224,8 +230,8 @@ namespace VDA_Android
 			// aapt resource value: 0x7f080008
 			public const int usernameInput = 2131230728;
 			
-			// aapt resource value: 0x7f080013
-			public const int value1 = 2131230739;
+			// aapt resource value: 0x7f080014
+			public const int value1 = 2131230740;
 			
 			// aapt resource value: 0x7f08000e
 			public const int welcome = 2131230734;

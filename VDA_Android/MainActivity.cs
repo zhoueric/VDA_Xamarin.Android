@@ -19,7 +19,7 @@ using VDA_Android.Models;
 
 namespace VDA_Android
 {
-    [Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
+    [Activity(Label = "Virtual Dealership Advisor")]
 
     public class MainActivity : Activity
     {
@@ -64,6 +64,16 @@ namespace VDA_Android
                 buttonGroup.Visibility = ViewStates.Gone;
                 micImage.Visibility = ViewStates.Visible;
             };
+            userInput.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
+
+                buttonConfirm.Visibility = ViewStates.Visible;
+                buttonTryAgain.Visibility = ViewStates.Visible;
+
+                buttonGroup.Visibility = ViewStates.Visible;
+
+                micImage.Visibility = ViewStates.Gone;
+
+            };
         }
 
         [Java.Interop.Export("GetSpeechInput")]
@@ -84,21 +94,24 @@ namespace VDA_Android
 
                 // This will be reinstated with working microphone. 
                 // Currently it will be set to dummy text.
+                try
+                {
+                    var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
 
-                //var resultList = data.GetStringArrayListExtra(RecognizerIntent.ExtraResults);
+                    speechStr = resultList[0];
+                    userInput.Text = speechStr;
 
-                //speechStr = resultList[0];
+                    speechResultTop.Text = "What you said was";
+                    speechResultBottom.Text = "...is that correct?";
+                }
+                catch
+                {
+                    speechResultTop.Text = "I'm sorry, I did not understand your question";
+                    speechResultBottom.Text = "";
+                    speechStr = "";
+                }
 
-
-                //speechResult.Text = "What you said was: \n\n" + speechStr +
-                //    " \n\nIs this correct?";
-
-                speechStr = "How can I improve my car sales?";
-
-                userInput.Text = speechStr;
-
-                speechResultTop.Text = "What you said was";
-                speechResultBottom.Text = "...is that correct?";
+               
 
                 buttonConfirm.Visibility = ViewStates.Visible;
                 buttonTryAgain.Visibility = ViewStates.Visible;

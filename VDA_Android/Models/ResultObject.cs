@@ -27,6 +27,7 @@ namespace VDA_Android.Models
         public string dealer { get; set; }
         public string month { get; set; }
         public string type { get; set; }
+        public string model { get; set; }
         public List<KpiAction> action_list { get; set; }
     }
 
