@@ -31,7 +31,7 @@ namespace VDA_Android
 {
     //[Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
 
-    [Activity(Label = "LoginActivity", MainLauncher = true)]
+    [Activity(Label = "VDA: Virtual Dealership Adviser", Icon = "@drawable/us_logo_transparent_black", MainLauncher = true)]
     class LoginActivity : Activity
     {
         Android.App.ProgressDialog progress;
