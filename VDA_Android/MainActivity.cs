@@ -19,7 +19,7 @@ using VDA_Android.Models;
 
 namespace VDA_Android
 {
-    [Activity(Label = "Virtual Dealership Advisor")]
+    [Activity(Label = "Virtual Dealership Advisor", MainLauncher = true)]
 
     public class MainActivity : Activity
     {
@@ -35,7 +35,7 @@ namespace VDA_Android
             // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.Main);
 
-            buttonGroup = FindViewById<LinearLayout>(Resource.Id.buttonWrap);
+            //buttonGroup = FindViewById<LinearLayout>(Resource.Id.buttonWrap);
 
             micImage = (ImageView)FindViewById(Resource.Id.btnSpeak);
 
@@ -48,7 +48,7 @@ namespace VDA_Android
             userInput = (EditText)FindViewById(Resource.Id.userInput);
 
             buttonConfirm = FindViewById<Button>(Resource.Id.confirmText);
-            buttonTryAgain = FindViewById<Button>(Resource.Id.tryAgain);
+            //buttonTryAgain = FindViewById<Button>(Resource.Id.tryAgain);
 
             buttonConfirm.Click += delegate
             {
@@ -57,21 +57,22 @@ namespace VDA_Android
                 StartActivity(res);
             };
 
-            buttonTryAgain.Click += delegate
-            {
-                buttonConfirm.Visibility = ViewStates.Gone;
-                buttonTryAgain.Visibility = ViewStates.Gone;
-                buttonGroup.Visibility = ViewStates.Gone;
-                micImage.Visibility = ViewStates.Visible;
-            };
+            //buttonTryAgain.Click += delegate
+            //{
+            //    buttonConfirm.Visibility = ViewStates.Gone;
+            //    buttonTryAgain.Visibility = ViewStates.Gone;
+            //    buttonGroup.Visibility = ViewStates.Gone;
+            //    micImage.Visibility = ViewStates.Visible;
+            //};
+
             userInput.TextChanged += (object sender, Android.Text.TextChangedEventArgs e) => {
 
                 buttonConfirm.Visibility = ViewStates.Visible;
-                buttonTryAgain.Visibility = ViewStates.Visible;
+                //buttonTryAgain.Visibility = ViewStates.Visible;
 
-                buttonGroup.Visibility = ViewStates.Visible;
+                //buttonGroup.Visibility = ViewStates.Visible;
 
-                micImage.Visibility = ViewStates.Gone;
+                //micImage.Visibility = ViewStates.Gone;
 
             };
         }

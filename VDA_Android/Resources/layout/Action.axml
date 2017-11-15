@@ -41,21 +41,21 @@
         android:layout_width="fill_parent"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp">
-      <Button
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="20dp">
+      <!--<Button
             android:id="@+id/startOverButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Start Over"
-            android:backgroundTint="@android:color/holo_red_light" />
+            android:backgroundTint="@android:color/holo_red_light" />-->
       <Button
             android:id="@+id/finishedButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Finished"
-            android:backgroundTint="@android:color/holo_blue_bright" />
+            android:text="Finished"/>
     </LinearLayout>
   </LinearLayout>
 </ScrollView>

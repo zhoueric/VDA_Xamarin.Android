@@ -32,7 +32,7 @@ namespace VDA_Android
 
             SetContentView(Resource.Layout.Action);
 
-            ColorDrawable colorDrawable = new ColorDrawable(Color.Rgb(153,204,0));
+            ColorDrawable colorDrawable = new ColorDrawable(Color.Rgb(112, 200, 47));
             ActionBar.SetBackgroundDrawable(colorDrawable);
 
             // Grabs values passed from previous activity
@@ -63,14 +63,15 @@ namespace VDA_Android
                 DisplayJsonActions();
             };
 
-            var startOverButton = FindViewById<Button>(Resource.Id.startOverButton);
+            var finishedButton = FindViewById<Button>(Resource.Id.finishedButton);
+            finishedButton.SetBackgroundColor(Android.Graphics.Color.Rgb(112,200,47));
 
-            startOverButton.Click += delegate
-            {
-                var act = new Intent(this, typeof(MainActivity));
-                //act.PutExtra("speechStr", speechStr);
-                StartActivity(act);
-            };
+            //startOverButton.Click += delegate
+            //{
+            //    var act = new Intent(this, typeof(MainActivity));
+            //    //act.PutExtra("speechStr", speechStr);
+            //    StartActivity(act);
+            //};
 
             butActions.PerformClick();
 

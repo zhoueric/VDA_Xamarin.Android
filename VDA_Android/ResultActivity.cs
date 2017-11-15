@@ -213,11 +213,11 @@ namespace VDA_Android
                 var card = new CardView(this);
 
                 // set card elevation
-                card.SetMinimumHeight(800);
+                card.SetMinimumHeight(300);
                 card.UseCompatPadding = true;
                 card.Elevation = 4;
                 card.Radius = 5;
-                card.SetForegroundGravity(GravityFlags.Center);
+                card.SetForegroundGravity(GravityFlags.CenterHorizontal);
                 card.SetPadding(0, 100, 0, 100);
 
                 // ========================================================================================
@@ -227,10 +227,11 @@ namespace VDA_Android
 
                 LinearLayout.LayoutParams ll2 = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WrapContent,
                     ViewGroup.LayoutParams.WrapContent);
+                linearLayout.SetGravity(GravityFlags.CenterHorizontal);
                 linearLayout.LayoutParameters = ll2;
 
                 linearLayout.Orientation = Orientation.Vertical;
-                linearLayout.SetGravity(GravityFlags.CenterHorizontal);
+                linearLayout.SetGravity(GravityFlags.Center);
                 linearLayout.SetPadding(3,3,3,3);
 
                 // ========================================================================================
@@ -338,6 +339,7 @@ namespace VDA_Android
                 LinearLayout.LayoutParams ll4 = new LinearLayout.LayoutParams(4,
                     ViewGroup.LayoutParams.MatchParent);
                 frameLayout.LayoutParameters = ll4;
+                frameLayout.SetForegroundGravity(GravityFlags.CenterHorizontal);
 
                 frameLayout.SetBackgroundResource(Resource.Drawable.card_edge_red);
 
