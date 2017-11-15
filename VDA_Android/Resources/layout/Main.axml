@@ -15,7 +15,7 @@
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
-        android:src="@drawable/logo"
+        android:src="@drawable/us_logo_transparent_black"
         android:layout_marginTop="25.0dp" />
     <TextView
         android:id="@+id/welcome"
