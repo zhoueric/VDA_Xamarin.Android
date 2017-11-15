@@ -115,19 +115,19 @@ namespace VDA_Android
                
 
                 buttonConfirm.Visibility = ViewStates.Visible;
-                buttonTryAgain.Visibility = ViewStates.Visible;
+                //buttonTryAgain.Visibility = ViewStates.Visible;
 
-                buttonGroup.Visibility = ViewStates.Visible;
+                //buttonGroup.Visibility = ViewStates.Visible;
 
-                micImage.Visibility = ViewStates.Gone;
+                //micImage.Visibility = ViewStates.Gone;
             }
         }
         private TextView speechResultTop;
         private TextView speechResultBottom;
         private EditText userInput;
         private Button buttonConfirm;
-        private Button buttonTryAgain;
-        private LinearLayout buttonGroup;
+        //private Button buttonTryAgain;
+        //private LinearLayout buttonGroup;
         ImageView micImage;
         private string speechStr = "";
     }

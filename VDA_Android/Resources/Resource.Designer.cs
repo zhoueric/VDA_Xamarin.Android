@@ -191,9 +191,6 @@ namespace VDA_Android
 			// aapt resource value: 0x7f08000b
 			public const int confirmText = 2131230731;
 			
-			// aapt resource value: 0x7f080004
-			public const int finishedButton = 2131230724;
-			
 			// aapt resource value: 0x7f080005
 			public const int loginResponse = 2131230725;
 			
@@ -220,6 +217,9 @@ namespace VDA_Android
 			
 			// aapt resource value: 0x7f080006
 			public const int speechResultTop = 2131230726;
+			
+			// aapt resource value: 0x7f080004
+			public const int startOverButton = 2131230724;
 			
 			// aapt resource value: 0x7f08000c
 			public const int usLogo = 2131230732;

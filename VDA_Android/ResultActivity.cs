@@ -193,8 +193,8 @@ namespace VDA_Android
             }
             catch
             {
-                var value1 = FindViewById<TextView>(Resource.Id.value1);
-                value1.Text = "I could not found any related KPI for your question";
+                var result1 = FindViewById<TextView>(Resource.Id.result1);
+                result1.Text = "I could not found any related KPI for your question";
             }
             
         }

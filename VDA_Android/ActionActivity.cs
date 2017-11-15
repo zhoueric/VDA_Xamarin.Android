@@ -63,15 +63,15 @@ namespace VDA_Android
                 DisplayJsonActions();
             };
 
-            var finishedButton = FindViewById<Button>(Resource.Id.finishedButton);
-            finishedButton.SetBackgroundColor(Android.Graphics.Color.Rgb(112,200,47));
+            var startOverButton = FindViewById<Button>(Resource.Id.startOverButton);
+            startOverButton.SetBackgroundColor(Android.Graphics.Color.Rgb(112,200,47));
 
-            //startOverButton.Click += delegate
-            //{
-            //    var act = new Intent(this, typeof(MainActivity));
-            //    //act.PutExtra("speechStr", speechStr);
-            //    StartActivity(act);
-            //};
+            startOverButton.Click += delegate
+            {
+                var act = new Intent(this, typeof(MainActivity));
+                //act.PutExtra("speechStr", speechStr);
+                StartActivity(act);
+            };
 
             butActions.PerformClick();
 
