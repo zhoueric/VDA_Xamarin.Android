@@ -145,6 +145,12 @@ namespace VDA_Android
 			// aapt resource value: 0x7f020006
 			public const int microphone3 = 2130837510;
 			
+			// aapt resource value: 0x7f020007
+			public const int us_logo_transparent_black = 2130837511;
+			
+			// aapt resource value: 0x7f020008
+			public const int us_logo_transparent_white = 2130837512;
+			
 			static Drawable()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
